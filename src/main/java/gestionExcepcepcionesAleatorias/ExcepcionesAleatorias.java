@@ -19,12 +19,12 @@ public class ExcepcionesAleatorias {
 		    
 		  }
 	
-	public void procesaNumero() {
+	public void procesaNumero() throws SuperiorException, InferiorException{
 		for (int i = 0; i < array.length; i++) {
 		      if (i>80) {
-		    	  Superiorexcepcion
+		    	  throw new SuperiorException("Ha superado 80");
 		      }else if(i<20) {
-		    	  Inferiorexcepcion
+		    	  throw new InferiorException("No ha superado a 20");
 		      }
 		      
 		      
@@ -35,7 +35,15 @@ public class ExcepcionesAleatorias {
 	public static void main(String [] args) {
 		ExcepcionesAleatorias e1 = new ExcepcionesAleatorias();
 		
-		e1.procesaNumero();
+		try {
+			e1.procesaNumero();
+		} catch (SuperiorException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		} catch (InferiorException e) {
+			// TODO Auto-generated catch block
+			System.out.println(e.getMessage());
+		}
 		
 		
 		
