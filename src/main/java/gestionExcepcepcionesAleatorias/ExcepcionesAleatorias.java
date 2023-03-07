@@ -3,22 +3,20 @@ import java.util.Random;
 
 public class ExcepcionesAleatorias {
 	 Random random = new Random();
-	private int[] miArray;
+	private int[] miArray = new int [100];
 	
 	public ExcepcionesAleatorias(){
 		
-		    miArray = new int[100];
 
 		    for (int i = 0; i < miArray.length; i++) {
 		    	
 		      miArray[i] = random.nextInt(101); // genera un número aleatorio entre 0 y 100 (ambos incluidos)
 		    }
 
-		    
 		  }
 	
 	public void procesaNumero() throws SuperiorException, InferiorException{
-		for (int i = 0; i < miArray.length; i++) {
+		for (int i = 1; i < miArray.length+1; i++) {
 			
 		      if (miArray[i]>80) {
 		    	  throw new SuperiorException("Ha superado 80");
@@ -35,7 +33,8 @@ public class ExcepcionesAleatorias {
 	
 	public static void main(String [] args) {
 		ExcepcionesAleatorias e1 = new ExcepcionesAleatorias();
-		while(true) {
+		
+		
 			try {
 				e1.procesaNumero();
 			} catch (SuperiorException e) {
@@ -44,12 +43,12 @@ public class ExcepcionesAleatorias {
 			} catch (InferiorException e) {
 				// TODO Auto-generated catch block
 				System.out.println(e.getMessage());
-			}
+		}
 		}
 		}
 		
 		
-	}
+	
 	
 	
 
