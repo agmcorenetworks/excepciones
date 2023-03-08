@@ -17,7 +17,7 @@ public class TestJunit {
 	void testException() {
 		LeerPorTeclado teclado = new LeerPorTeclado();
 		try {
-			teclado.processChar('1');
+			teclado.processChar('a');
 			assertTrue(false);
 		} catch (VocalException e) {
 			// TODO Auto-generated catch block

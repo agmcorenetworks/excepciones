@@ -16,6 +16,7 @@ public class ExcepcionesAleatorias {
     public void procesaNumero(int numero) throws SuperiorException, InferiorException {
         
     	if (numero == 0 || numero == 100 || numero == 50) {
+    		System.out.println("Cerrando el programa.");
             System.exit(0);;
         } else if (numero > 80) {
             throw new SuperiorException("El número es mayor que 80");
@@ -24,10 +25,18 @@ public class ExcepcionesAleatorias {
         }
     }
 	
-	public static void main(String [] args) {
-		ExcepcionesAleatorias prueba = new ExcepcionesAleatorias();
-			prueba.getNumeros();
-			procesaNumero();
+	public static void main(String [] args) throws InferiorException {
+			ExcepcionesAleatorias salida = new ExcepcionesAleatorias();
+			for (int i : salida.num) {
+				try {
+					salida.procesaNumero(i);
+				} catch (SuperiorException e) {
+					System.out.println("Número: "+ i + ". "+ e.getMessage());
+				}
+				catch (InferiorException e) {
+				System.out.println("Número: "+ i + ". "+ e.getMessage());
+			}
+			}
 		}
 }
 
