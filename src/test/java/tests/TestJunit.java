@@ -1,23 +1,21 @@
 package tests;
+import static org.junit.Assert.assertTrue;
 
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertTrue;
-
-import org.junit.jupiter.api.Test;
+import org.junit.Test;
 
 import gestionExcepcionesPorTeclado.BlancoException;
 import gestionExcepcionesPorTeclado.LeerPorTeclado;
 import gestionExcepcionesPorTeclado.NumeroException;
 import gestionExcepcionesPorTeclado.SalidaException;
 import gestionExcepcionesPorTeclado.VocalException;
-
 public class TestJunit {	
 	
 	@Test
-	void testException() {
+	public void testException() {	
+		
 		LeerPorTeclado teclado = new LeerPorTeclado();
 		try {
-			teclado.processChar('1');
+			teclado.processChar('e');
 			assertTrue(false);
 		} catch (VocalException e) {
 			// TODO Auto-generated catch block
@@ -25,7 +23,7 @@ public class TestJunit {
 		} catch (NumeroException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
-			assertTrue(false,"Esta excepcion no es la correcta");
+			assertTrue(false);
 		} catch (BlancoException e) {
 			// TODO Auto-generated catch block
 			e.printStackTrace();
