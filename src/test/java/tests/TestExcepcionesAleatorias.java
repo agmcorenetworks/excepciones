@@ -19,7 +19,7 @@ public class TestExcepcionesAleatorias {
 		
 	
 		try {
-			e1.saltaExcepcion(3);
+			e1.saltaExcepcion(81);
 		} catch (SuperiorException e) {
 			// TODO Auto-generated catch block
 			assertFalse(false, e.getMessage());
